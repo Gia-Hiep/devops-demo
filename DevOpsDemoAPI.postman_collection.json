@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "8ef928bd-3eec-4dd1-8d6e-ff22079ebf33",
+		"name": "DevOpsDemoAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43853194"
+	},
+	"item": [
+		{
+			"name": "Test Add API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check if add API returns correct result\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.json()).to.equal(5);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/add?a=2&b=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"add"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "2"
+						},
+						{
+							"key": "b",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
